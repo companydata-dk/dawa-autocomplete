@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/%40companydata-dk%2Fdawa-autocomplete?label=npm)](https://www.npmjs.com/package/@companydata-dk/dawa-autocomplete)
 [![licens MIT](https://img.shields.io/badge/licens-MIT-blue)](LICENSE)
-[![demo](https://img.shields.io/badge/demo-pr%C3%B8v%20den-1f5eff)](https://companydata-dk.github.io/dawa-autocomplete/)
+[![demo](https://img.shields.io/badge/demo-pr%C3%B8v%20den-1f5eff)](https://dawa.companydata.dk/demo)
 
 **DAWA lukker 1. oktober 2026. Din adresse-autocomplete behøver ikke at lukke med.**
 
@@ -10,7 +10,7 @@ Dette er [dawa-autocomplete2](https://github.com/SDFIdk/dawa-autocomplete2) (MIT
 
 ![Autocomplete fra vejnavn til etage](docs/demo.gif)
 
-**[Prøv den live](https://companydata-dk.github.io/dawa-autocomplete/)**, den taler med den rigtige tjeneste.
+**[Prøv den live](https://dawa.companydata.dk/demo)**, den taler med den rigtige tjeneste.
 
 ## Tre måder at komme i gang
 
