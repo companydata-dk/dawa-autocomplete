@@ -1,5 +1,5 @@
 {
-  "name": "dawa-autocomplete-companydata",
+  "name": "@companydata-dk/dawa-autocomplete",
   "version": "2.0.0",
   "description": "DAWA-autocomplete til dawa.companydata.dk: dawa-autocomplete2 med companydata.dk som standard base-URL og en apiKey-indstilling",
   "main": "dist/js/dawa-autocomplete2.js",
@@ -64,5 +64,8 @@
     "src",
     "LICENSE",
     "README.md"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }

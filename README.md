@@ -1,4 +1,4 @@
-# dawa-autocomplete-companydata
+# @companydata-dk/dawa-autocomplete
 
 Adresse-autocomplete til danske adresser, en udgave af [dawa-autocomplete2](https://github.com/SDFIdk/dawa-autocomplete2) (MIT, Styrelsen for Dataforsyning og Infrastruktur), der som standard taler med [dawa.companydata.dk](https://dawa.companydata.dk) i stedet for DAWA, som lukker 1. oktober 2026.
 
@@ -26,11 +26,11 @@ Som script:
 Som pakke:
 
 ```
-npm install dawa-autocomplete-companydata
+npm install @companydata-dk/dawa-autocomplete
 ```
 
 ```js
-import { dawaAutocomplete } from 'dawa-autocomplete-companydata';
+import { dawaAutocomplete } from '@companydata-dk/dawa-autocomplete';
 
 dawaAutocomplete(document.getElementById('adresse'), {
   select: valgt => console.log(valgt.data.id, valgt.tekst),
