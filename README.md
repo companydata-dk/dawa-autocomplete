@@ -47,6 +47,10 @@ Alle indstillinger fra dawa-autocomplete2 gælder uændret: `baseUrl`, `minLengt
 
 Nøgleløs brug er begrænset pr. IP-adresse. En gratis nøgle fås på [companydata.dk/api](https://companydata.dk/api); adressekald tæller ikke på nøglens API-kvote.
 
+## Kildekode og fejl
+
+Koden ligger på [github.com/companydata-dk/dawa-autocomplete](https://github.com/companydata-dk/dawa-autocomplete). Fejl og ønsker som issues samme sted.
+
 ## Byg
 
 ```
