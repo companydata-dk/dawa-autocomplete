@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adresse-autocomplete uden DAWA</title>
+<meta name="description" content="Prøv dawa-autocomplete mod dawa.companydata.dk: skriv en adresse, vælg vej, husnummer og etage, og se det data din kode får tilbage.">
+<link rel="stylesheet" href="css/dawa-autocomplete2.css">
+<style>
+  :root { --ink: #1a1a1a; --muted: #5b6470; --line: #e4e7eb; --accent: #1f5eff; --bg: #ffffff; --code: #f5f7fa; }
+  @media (prefers-color-scheme: dark) { :root { --ink: #e8eaed; --muted: #a0a8b3; --line: #2b3038; --accent: #7aa2ff; --bg: #0f1216; --code: #171b21; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--ink); background: var(--bg); }
+  main { max-width: 760px; margin: 0 auto; padding: 40px 16px 80px; }
+  h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 8px; }
+  h2 { font-size: 1.2rem; margin: 40px 0 8px; }
+  .lead { color: var(--muted); margin: 0 0 24px; }
+  label { display: block; font-weight: 600; margin: 0 0 6px; }
+  .dawa-autocomplete-container { position: relative; }
+  .dawa-autocomplete-container input { width: 100%; font: inherit; padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); }
+  .dawa-autocomplete-suggestions { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+  .dawa-autocomplete-suggestion { padding: 8px 14px; cursor: pointer; }
+  .dawa-autocomplete-suggestion.dawa-selected, .dawa-autocomplete-suggestion:hover { background: var(--code); }
+  pre { background: var(--code); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; overflow-x: auto; min-height: 120px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.92em; background: var(--code); padding: 1px 5px; border-radius: 4px; }
+  pre code { background: none; padding: 0; }
+  .hint { color: var(--muted); font-size: 0.92em; }
+  .row { display: grid; gap: 8px; grid-template-columns: 1fr; }
+  a { color: var(--accent); }
+  footer { margin-top: 56px; color: var(--muted); font-size: 0.9em; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+<main>
+<h1>Adresse-autocomplete uden DAWA</h1>
+<p class="lead">Samme widget som dawa-autocomplete2, samme forslag, samme data. Kun kilden er ny: <a href="https://dawa.companydata.dk">dawa.companydata.dk</a>. Prøv den her.</p>
+
+<label for="adresse">Skriv en adresse</label>
+<div class="dawa-autocomplete-container">
+  <input id="adresse" type="search" autocomplete="off" placeholder="f.eks. Rentemestervej 8" aria-describedby="hint">
+</div>
+<p class="hint" id="hint">Vejnavn, så husnummer, så etage og dør. Pil ned og Enter, eller klik.</p>
+
+<h2>Det din kode får tilbage</h2>
+<pre><code id="valgt">Vælg en adresse ovenfor, så vises <code>select</code>-callbackens argument her.</code></pre>
+
+<h2>Sådan sættes den op</h2>
+<pre><code>&lt;link rel="stylesheet" href="https://cdn.companydata.dk/dawa-autocomplete/2.0.0/dawa-autocomplete2.css"&gt;
+&lt;input id="adresse" type="text" autocomplete="off"&gt;
+&lt;script src="https://cdn.companydata.dk/dawa-autocomplete/2.0.0/dawa-autocomplete2.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  dawaAutocomplete.dawaAutocomplete(document.getElementById('adresse'), {
+    select: valgt =&gt; console.log(valgt.data.id, valgt.tekst)
+  });
+&lt;/script&gt;</code></pre>
+<p>Eller <code>npm install @companydata-dk/dawa-autocomplete</code>. Bruger du allerede dawa-autocomplete2, sætter du bare <code>baseUrl: 'https://dawa.companydata.dk'</code>.</p>
+
+<h2>Flere varianter</h2>
+<p>Alle indstillinger fra dawa-autocomplete2 virker uændret. <a href="html/demo.html">Se galleriet</a> med adgangsadresser alene, kommunefilter, minimumslængde og de øvrige.</p>
+
+<footer>Kode og fejlmeldinger på <a href="https://github.com/companydata-dk/dawa-autocomplete">github.com/companydata-dk/dawa-autocomplete</a>. Leveret af <a href="https://companydata.dk">companydata.dk</a>. Adressedata fra Danmarks Adresseregister via Datafordeleren.</footer>
+</main>
+<script src="js/dawa-autocomplete2.min.js"></script>
+<script>
+  dawaAutocomplete.dawaAutocomplete(document.getElementById('adresse'), {
+    select: function (valgt) {
+      document.getElementById('valgt').textContent = JSON.stringify(valgt, null, 2);
+    }
+  });
+</script>
+</body>
+</html>
